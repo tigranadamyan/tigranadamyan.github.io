@@ -1,121 +1,285 @@
-<ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tigran Adamyan — Full-Stack Developer. PHP/Laravel, Vue.js, C++." />
+  <title>Tigran Adamyan — Full-Stack Developer</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --bg-card: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-secondary: #8b949e;
+      --accent: #58a6ff;
+      --accent-dim: #1f6feb;
+      --tag-bg: #1a2332;
+    }
 
-    <li><a href="http://kubsu.ru/">КубГУ</a>  </li>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    <li><a href="http://example.com/">Абсолютная гиперссылка</a></li>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
 
-    <li><a href="https://example.com/news.html">абсолютная на главную </a> </li>
+    .container { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem; }
 
-    <li><a href="ftp://user:password@example.com/myfile.zip">c авторизацией </a> </li>
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #58a6ff, #bc8cff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero .title {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .hero .bio {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
 
-    <li><a href="ftp:/example.com/myfile.zip">без авторизацией </a> </li>
+    /* Links */
+    .links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+    .links a:hover { background: var(--tag-bg); border-color: var(--accent); }
 
-    <li><a href="https://example.com/examples/examle#foto">Фрагмент cтраницы некоторого сайта(пример)</a> </li>
+    /* Section */
+    .section { margin-bottom: 2.5rem; }
+    .section h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
 
-    <li><a href="http://example/examples?id=a&id=b">Ссылка с двумя параметрами(пример)</a></li>
+    /* Tech */
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tech-tag {
+      padding: 0.3rem 0.8rem;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    .tech-tag.highlight { color: var(--accent); border-color: var(--accent-dim); }
 
-    <li><nav><a href="1.html"> ex1</a>  <a href="2.html">ex2</a> 
+    /* Projects */
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s;
+    }
+    .project-card:hover { border-color: var(--accent-dim); }
+    .project-card h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .project-card h3 a { color: var(--accent); text-decoration: none; }
+    .project-card h3 a:hover { text-decoration: underline; }
+    .project-card .desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+    }
+    .project-card .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .project-card .tag {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      background: var(--tag-bg);
+      border-radius: 4px;
+      color: var(--text-secondary);
+    }
 
-       <a href="3.html">ex3</a>  <a href="4.html">ex4</a></nav></li>
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 0;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+      margin-top: 2rem;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
 
-    <li><a> ссылка без href</a></li>
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.8rem; }
+      .container { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>Tigran Adamyan</h1>
+      <p class="title">Full-Stack Developer — PHP/Laravel &bull; Vue.js &bull; C++</p>
+      <p class="bio">
+        Building production software across the stack: from native macOS desktop apps
+        in C++23 to Laravel-powered SaaS platforms with Vue 3 SPAs. I ship complete
+        products — architecture, implementation, deployment, and documentation.
+      </p>
+      <div class="links">
+        <a href="https://github.com/tigr322">🐙 GitHub</a>
+        <a href="https://t.me/tigr322">💬 Telegram</a>
+        <a href="mailto:tigran@adamyan.dev">📧 Email</a>
+        <a href="https://github.com/tigr322/DropAndDrag/releases">⬇️ DropAndDrag</a>
+      </div>
+    </header>
 
-    <li><a href="##">ссылка с пустым href</a></li>
+    <section class="section">
+      <h2>🛠️ Technology Stack</h2>
+      <div class="tech-grid">
+        <span class="tech-tag highlight">PHP</span>
+        <span class="tech-tag highlight">Laravel</span>
+        <span class="tech-tag highlight">Vue.js</span>
+        <span class="tech-tag highlight">C++</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Inertia.js</span>
+        <span class="tech-tag">Tailwind CSS</span>
+        <span class="tech-tag">Alpine.js</span>
+        <span class="tech-tag">PostgreSQL</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">Redis</span>
+        <span class="tech-tag">Meilisearch</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">CMake</span>
+        <span class="tech-tag">Linux</span>
+        <span class="tech-tag">GitHub Actions</span>
+        <span class="tech-tag">PHPStan</span>
+        <span class="tech-tag">PHPUnit</span>
+        <span class="tech-tag">Python</span>
+      </div>
+    </section>
 
-    <li><a href="http://example.ru" rel="nofollow"> ссылка по которому запрещен переход</a></li>
+    <section class="section">
+      <h2>📌 Featured Projects</h2>
 
-    <li><a href="http://example.ru" rel="nofollow"> запрещенная на индексацию поисковикам</a></li>
-    <li> <p>  Посмотрите на этот  <a href ="https://example.com/news.html" target = "_blank" rel = "noopener"> пример </a> , который показывает нам как должна выглядить контекстная ссылка. </p></li>
+      <div class="project-card">
+        <h3><a href="https://github.com/tigr322/DropAndDrag">DropAndDrag</a></h3>
+        <p class="desc">
+          Fast cross-platform drag-and-drop shelf for macOS and Linux. Shake cursor
+          to open — drop files, images, text, URLs. Drag out to any app. Native Cocoa +
+          Skia rendering. 0% idle CPU. 22 MB memory.
+        </p>
+        <div class="tags">
+          <span class="tag">C++23</span><span class="tag">Cocoa</span><span class="tag">X11</span><span class="tag">Skia</span><span class="tag">CMake</span><span class="tag">Homebrew</span>
+        </div>
+      </div>
 
+      <div class="project-card">
+        <h3><a href="https://github.com/tigr322/goldshinetrade">goldshinetrade</a></h3>
+        <p class="desc">
+          Gaming currency exchange marketplace. Escrow system, real-time chat (Pusher),
+          CKassa payments, VK ID + Google OAuth, admin panel. Docker-deployed.
+        </p>
+        <div class="tags">
+          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Inertia.js</span><span class="tag">Docker</span>
+        </div>
+      </div>
 
-    <li><a href="examle.html"><img src="https://wampi.ru/image/RQWUg9t" width="50" 
+      <div class="project-card">
+        <h3><a href="https://github.com/tigr322/AOE2DEAnalyzator">AOE2DEAnalyzator</a></h3>
+        <p class="desc">
+          AoE2:DE match analyzer with AI. Domain-driven analysis rules engine,
+          Steam API integration, and Filament admin panel.
+        </p>
+        <div class="tags">
+          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Filament</span><span class="tag">Python</span>
+        </div>
+      </div>
 
-   height="50" alt="Ccылка-изображение"></a> </li>
+      <div class="project-card">
+        <h3><a href="https://github.com/tigr322/Configurator_PC">Configurator_PC</a></h3>
+        <p class="desc">
+          Interactive PC build configurator with compatibility validation,
+          web-scraped pricing, build sharing, and AI chat assistant (DeepSeek).
+        </p>
+        <div class="tags">
+          <span class="tag">Laravel 12</span><span class="tag">Blade</span><span class="tag">Tailwind CSS</span><span class="tag">RoachPHP</span>
+        </div>
+      </div>
 
-    
+      <div class="project-card">
+        <h3><a href="https://github.com/tigr322/Programm-Pedia">Programm-Pedia</a></h3>
+        <p class="desc">
+          Developer knowledge base with instant full-text search (Meilisearch).
+          Practical code examples, error solutions, and step-by-step guides.
+        </p>
+        <div class="tags">
+          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Meilisearch</span>
+        </div>
+      </div>
 
-    <li><img src = "map.png" usemap = "#figuri" alt = "Доступны 4 фигуры для выбора" >
+      <div class="project-card">
+        <h3><a href="https://github.com/tigr322/titleSheet_bot">titleSheet_bot</a></h3>
+        <p class="desc">
+          Telegram bot for isometric sprite sheet generation. AI background removal
+          (rembg) with 2-pass normalization — Docker-deployed.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">rembg</span><span class="tag">Telegram API</span><span class="tag">Docker</span>
+        </div>
+      </div>
+    </section>
 
-		<map name = "figuri" >
-
-			<area shape = "rect" coords = "25,25,125,125" href = "red.html" alt = "Красный квадрат" >
-
-			<area shape = "circle" coords = "200,75,50" href = "green.html" alt = "Зелёный круг." > </map> </li>
-
-     <li><a href="example.html">Относительная ссылка</a></li>
-
-     <li><a href="example/about.html">В каталоге about</a></li>
-
-    <li><a href="examples/example.html">Ccылка на вышестоящий каталог</a></li>
-
-    <li><a href="exampler/examples/example.html"> РАСПОЛОЖЕННЫЙ ДВУМЯ УРОВНЯМИ ВЫШЕ</a></li>
-
-    <li><a href="/news.html">Сокращенный на главную</a></li>
-
-    <li><a href="#tigr322.github.io">Сокращенный внутренняя ссылка</a></li>
-     <li>
-     <form action="http://example.com/app/profile.php" method="post">
-         <p>
-            <label for="username">
-               Имя: 
-            </label>
-            <input type="text" name="username" />
-            <br />
-           <label for="email">
-               Адрес эл. почты: 
-            </label>
-            <input type="text" name="email" />
-		 <br />
-		 <label for="start"> Дата рождения:</label>
-
-       <input type="date" id="start" name="trip-start">
-            <br />
-            <label for="sex">
-               Пол: 
-		     <br />
-            </label>
-            <input type="radio" name="sex" value="male" />
-            мужской
-            <br />
-            <input type="radio" name="sex" value="female" />
-            женский
-            <br />
-            <input type="radio" name="sex" value="secret" />
-            не хочу отвечать
-		 <br />
-		  <label for="bones">
-               Количество конечностей:
-			   <br />
-            </label>
-            <input type="radio" name="bones" value="4" />
-            4
-            <br />
-            <input type="radio" name="bones" value="20" />
-            20
-            <br />
-            <input type="radio" name="bones" value="1" />
-           1
-		 <br />
-            <input type="radio" name="bones" value="0" />
-           0
-		 <br />
-		   <p><strong>Суперспособности</strong></p>
-   <p><select name="hero">
-    <option value="s1" selected>Бессмертие</option>
-    <option value="s2" selected>Прохождение сквозь стены</option>
-    <option value="s3" selected> Левитация </option>
-    <option value="s3" label="Телепортация">Телепортация</option>
-   </select> 
-	   <p>
-	   <form action="handler.php">
-          <p><b>Ваша биография:</b></p>
-          <p><textarea name="comment"></textarea></p>
-<form action="handler.php">
-  
- <p><input type="checkbox" name="a" value="know"> C контрактом ознакомлен (а) </p>
-            <input type="submit" value="Отправить">
-            <input type="reset" value="Очистить">
-         </p>
-	     </p>
- </li>
-</ol>
+    <footer>
+      <p>
+        <a href="https://github.com/tigr322">GitHub</a> &bull;
+        <a href="https://t.me/tigr322">Telegram</a> &bull;
+        <a href="mailto:tigran@adamyan.dev">tigran@adamyan.dev</a>
+      </p>
+      <p style="margin-top: 0.5rem;">&copy; 2026 Tigran Adamyan</p>
+    </footer>
+  </div>
+</body>
+</html>
