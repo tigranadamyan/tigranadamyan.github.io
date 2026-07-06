@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Tigran Adamyan — Full-Stack Developer. PHP/Laravel, Vue.js, C++." />
+  <meta name="description" content="Tigran Adamyan — Full-Stack Developer. PHP/Laravel, Vue.js." />
   <title>Tigran Adamyan — Full-Stack Developer</title>
   <style>
     :root {
@@ -29,7 +29,6 @@
 
     .container { max-width: 880px; margin: 0 auto; padding: 2rem 1.5rem; }
 
-    /* Hero */
     .hero {
       text-align: center;
       padding: 3rem 0 2rem;
@@ -58,7 +57,6 @@
       line-height: 1.7;
     }
 
-    /* Links */
     .links {
       display: flex;
       justify-content: center;
@@ -77,7 +75,6 @@
     }
     .links a:hover { background: var(--tag-bg); border-color: var(--accent); }
 
-    /* Section */
     .section { margin-bottom: 2.5rem; }
     .section h2 {
       font-size: 1.3rem;
@@ -87,7 +84,6 @@
       border-bottom: 1px solid var(--border);
     }
 
-    /* Tech */
     .tech-grid {
       display: flex;
       flex-wrap: wrap;
@@ -104,7 +100,6 @@
     }
     .tech-tag.highlight { color: var(--accent); border-color: var(--accent-dim); }
 
-    /* Projects */
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
@@ -140,7 +135,19 @@
       color: var(--text-secondary);
     }
 
-    /* Footer */
+    .also-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      margin-top: 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .also-section a { color: var(--accent); text-decoration: none; }
+    .also-section a:hover { text-decoration: underline; }
+
     footer {
       text-align: center;
       padding: 2rem 0;
@@ -151,7 +158,6 @@
     }
     footer a { color: var(--accent); text-decoration: none; }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .hero h1 { font-size: 1.8rem; }
       .container { padding: 1rem; }
@@ -162,17 +168,18 @@
   <div class="container">
     <header class="hero">
       <h1>Tigran Adamyan</h1>
-      <p class="title">Full-Stack Developer — PHP/Laravel &bull; Vue.js &bull; C++</p>
+      <p class="title">Full-Stack Developer — PHP/Laravel &bull; Vue.js</p>
       <p class="bio">
-        Building production software across the stack: from native macOS desktop apps
-        in C++23 to Laravel-powered SaaS platforms with Vue 3 SPAs. I ship complete
-        products — architecture, implementation, deployment, and documentation.
+        Full-stack разработчик. Строю веб-платформы, SaaS-продукты и API на Laravel
+        с Vue 3 на фронте. Работал в госсекторе (ТФОМС), e-commerce (KINETICA)
+        и высоконагруженном геймдеве (OldBK2). Проектирую архитектуру, пишу чистый
+        код, заворачиваю в Docker, документирую. Иногда пишу на C++ для души —
+        <a href="https://github.com/tigranadamyan/DropAndDrag">DropAndDrag</a>.
       </p>
       <div class="links">
-        <a href="https://github.com/tigr322">🐙 GitHub</a>
+        <a href="https://github.com/tigranadamyan">🐙 GitHub</a>
         <a href="https://t.me/tigr322">💬 Telegram</a>
         <a href="mailto:tigran05012002@mail.ru">📧 Email</a>
-        <a href="https://github.com/tigr322/DropAndDrag/releases">⬇️ DropAndDrag</a>
       </div>
     </header>
 
@@ -182,99 +189,98 @@
         <span class="tech-tag highlight">PHP</span>
         <span class="tech-tag highlight">Laravel</span>
         <span class="tech-tag highlight">Vue.js</span>
-        <span class="tech-tag highlight">C++</span>
-        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag highlight">MySQL</span>
+        <span class="tech-tag highlight">PostgreSQL</span>
+        <span class="tech-tag">Symfony</span>
         <span class="tech-tag">Inertia.js</span>
+        <span class="tech-tag">Nuxt</span>
         <span class="tech-tag">Tailwind CSS</span>
         <span class="tech-tag">Alpine.js</span>
-        <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">MySQL</span>
         <span class="tech-tag">Redis</span>
         <span class="tech-tag">Meilisearch</span>
         <span class="tech-tag">Docker</span>
-        <span class="tech-tag">CMake</span>
-        <span class="tech-tag">Linux</span>
+        <span class="tech-tag">Nginx</span>
         <span class="tech-tag">GitHub Actions</span>
         <span class="tech-tag">PHPStan</span>
         <span class="tech-tag">PHPUnit</span>
+        <span class="tech-tag">Rector</span>
+        <span class="tech-tag">Stripe</span>
+        <span class="tech-tag">CKassa</span>
         <span class="tech-tag">Python</span>
+        <span class="tech-tag">C++</span>
       </div>
     </section>
 
     <section class="section">
-      <h2>📌 Featured Projects</h2>
+      <h2>📌 Projects</h2>
 
       <div class="project-card">
-        <h3><a href="https://github.com/tigr322/DropAndDrag">DropAndDrag</a></h3>
+        <h3><a href="https://github.com/tigranadamyan/goldshinetrade">goldshinetrade</a></h3>
         <p class="desc">
-          Fast cross-platform drag-and-drop shelf for macOS and Linux. Shake cursor
-          to open — drop files, images, text, URLs. Drag out to any app. Native Cocoa +
-          Skia rendering. 0% idle CPU. 22 MB memory.
+          Маркетплейс игровых валют. Escrow-система с заморозкой средств, чат в
+          реальном времени (Pusher), платёжный шлюз CKassa, авторизация VK ID +
+          Google OAuth, ролевая модель (Spatie), админ-панель.
         </p>
         <div class="tags">
-          <span class="tag">C++23</span><span class="tag">Cocoa</span><span class="tag">X11</span><span class="tag">Skia</span><span class="tag">CMake</span><span class="tag">Homebrew</span>
+          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Inertia.js</span><span class="tag">Docker</span><span class="tag">CKassa</span><span class="tag">Pusher</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3><a href="https://github.com/tigr322/goldshinetrade">goldshinetrade</a></h3>
+        <h3><a href="https://github.com/tigranadamyan/Configurator_PC">Configurator_PC</a></h3>
         <p class="desc">
-          Gaming currency exchange marketplace. Escrow system, real-time chat (Pusher),
-          CKassa payments, VK ID + Google OAuth, admin panel. Docker-deployed.
+          Конфигуратор ПК с проверкой совместимости комплектующих. AJAX-фильтры,
+          парсинг цен из магазинов (RoachPHP), сохранение сборок, лайки/комментарии,
+          AI-ассистент (DeepSeek).
         </p>
         <div class="tags">
-          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Inertia.js</span><span class="tag">Docker</span>
+          <span class="tag">Laravel 12</span><span class="tag">Blade</span><span class="tag">Tailwind CSS</span><span class="tag">Alpine.js</span><span class="tag">RoachPHP</span><span class="tag">DeepSeek</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3><a href="https://github.com/tigr322/AOE2DEAnalyzator">AOE2DEAnalyzator</a></h3>
+        <h3><a href="https://github.com/tigranadamyan/AOE2DEAnalyzator">AOE2DEAnalyzator</a></h3>
         <p class="desc">
-          AoE2:DE match analyzer with AI. Domain-driven analysis rules engine,
-          Steam API integration, and Filament admin panel.
+          Анализатор матчей Age of Empires II:DE. Парсинг реплеев, доменный движок
+          правил анализа, интеграция Steam API, админ-панель на Filament.
         </p>
         <div class="tags">
-          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Filament</span><span class="tag">Python</span>
+          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Filament</span><span class="tag">Python</span><span class="tag">Steam API</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3><a href="https://github.com/tigr322/Configurator_PC">Configurator_PC</a></h3>
+        <h3><a href="https://github.com/tigranadamyan/Programm-Pedia">Programm-Pedia</a></h3>
         <p class="desc">
-          Interactive PC build configurator with compatibility validation,
-          web-scraped pricing, build sharing, and AI chat assistant (DeepSeek).
+          База знаний для разработчиков. Мгновенный полнотекстовый поиск (Meilisearch),
+          rich-редактор (Quill), загрузка PDF, система публичных и приватных записей.
         </p>
         <div class="tags">
-          <span class="tag">Laravel 12</span><span class="tag">Blade</span><span class="tag">Tailwind CSS</span><span class="tag">RoachPHP</span>
+          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Meilisearch</span><span class="tag">Docker</span>
         </div>
       </div>
 
       <div class="project-card">
-        <h3><a href="https://github.com/tigr322/Programm-Pedia">Programm-Pedia</a></h3>
+        <h3><a href="https://github.com/tigranadamyan/titleSheet_bot">titleSheet_bot</a></h3>
         <p class="desc">
-          Developer knowledge base with instant full-text search (Meilisearch).
-          Practical code examples, error solutions, and step-by-step guides.
-        </p>
-        <div class="tags">
-          <span class="tag">Laravel 12</span><span class="tag">Vue 3</span><span class="tag">Meilisearch</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <h3><a href="https://github.com/tigr322/titleSheet_bot">titleSheet_bot</a></h3>
-        <p class="desc">
-          Telegram bot for isometric sprite sheet generation. AI background removal
-          (rembg) with 2-pass normalization — Docker-deployed.
+          Telegram-бот для генерации изометрических спрайтов. AI-удаление фона (rembg)
+          с двухпроходной нормализацией, Docker-деплой.
         </p>
         <div class="tags">
           <span class="tag">Python</span><span class="tag">rembg</span><span class="tag">Telegram API</span><span class="tag">Docker</span>
         </div>
       </div>
+
+      <div class="also-section">
+        <strong>Также:</strong>
+        <a href="https://github.com/tigranadamyan/DropAndDrag">DropAndDrag</a> —
+        кроссплатформенная drag-and-drop полка для macOS и Linux на C++23 (Cocoa, X11, Skia). Неродной стек, pet-проект для изучения системного программирования.
+      </div>
     </section>
 
     <footer>
       <p>
-        <a href="https://github.com/tigr322">GitHub</a> &bull;
+        <a href="https://github.com/tigranadamyan">GitHub</a> &bull;
         <a href="https://t.me/tigr322">Telegram</a> &bull;
         <a href="mailto:tigran05012002@mail.ru">tigran05012002@mail.ru</a>
       </p>
